@@ -1,0 +1,5 @@
+﻿CREATE SCHEMA [mfk]
+    AUTHORIZATION [dbo];
+
+
+

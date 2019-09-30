@@ -1,0 +1,17 @@
+﻿https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-3.0&tabs=windows
+
+https://weblog.west-wind.com/posts/2018/Feb/18/Accessing-Configuration-in-NET-Core-Test-Projects#setting-up-dependency-injection
+
+dotnet user-secrets init --project GRC.Api.csproj
+
+ dotnet user-secrets set "GRC:ConnectionString" "Server=(localdb)\mssqllocaldb;Database=GRC;Trusted_Connection=True;"
+
+Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=GRC;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+https://docs.microsoft.com/en-us/ef/ef6/modeling/designer/inheritance/tph
+
+https://github.com/ardalis/CleanArchitecture/tree/master/src/CleanArchitecture.Core/SharedKernel
+
+https://www.learnentityframeworkcore.com/configuration/fluent-api/hasalternatekey-method
+
+https://docs.microsoft.com/en-us/ef/core/modeling/alternate-keys

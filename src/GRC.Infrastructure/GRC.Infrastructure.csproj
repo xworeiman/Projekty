@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GRC.DataAccess\GRC.DataAccess.csproj" />
+    <ProjectReference Include="..\GRC.Domain\GRC.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
