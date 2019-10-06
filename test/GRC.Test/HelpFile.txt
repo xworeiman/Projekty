@@ -15,3 +15,11 @@ https://github.com/ardalis/CleanArchitecture/tree/master/src/CleanArchitecture.C
 https://www.learnentityframeworkcore.com/configuration/fluent-api/hasalternatekey-method
 
 https://docs.microsoft.com/en-us/ef/core/modeling/alternate-keys
+
+https://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/
+
+https://blog.ploeh.dk/2014/06/10/pure-di/
+
+https://blog.ploeh.dk/2012/11/06/WhentouseaDIContainer/
+
+https://kozmic.net/2012/10/23/ioc-container-solves-a-problem-you-might-not-have-but-its-a-nice-problem-to-have/

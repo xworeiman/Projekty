@@ -127,6 +127,8 @@
     <Folder Include="Schema\mfk\Tables" />
     <Folder Include="Schema\history" />
     <Folder Include="Schema\history\Tables" />
+    <Folder Include="Schema\mfk\Sequences" />
+    <Folder Include="Schema\mfk\Functions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\history.sql" />
@@ -138,6 +140,10 @@
     <Build Include="Schema\mfk\Tables\SubProcess.sql" />
     <Build Include="Schema\history\Tables\ControlMechanismRelations.sql" />
     <Build Include="Schema\mfk\Tables\Origin.sql" />
+    <Build Include="Schema\mfk\Sequences\OriginPK.sql" />
+    <Build Include="Schema\mfk\Functions\inlineFunction.sql" />
+    <Build Include="Schema\mfk\Functions\tableFunction.sql" />
+    <Build Include="Schema\mfk\Functions\scalarFunction.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Compare\GRC.scmp" />

@@ -3,6 +3,7 @@
     using GRC.DataAccess.Configuration;
     using GRC.Domain.Models;
     using Microsoft.EntityFrameworkCore;
+    using System;
 
     public partial class GrcContext : DbContext
     {
@@ -10,7 +11,7 @@
         {
         }
 
-        public GrcContext(DbContextOptions<GrcContext> options)
+        public GrcContext(DbContextOptions options)
             : base(options)
         {
         }
@@ -33,6 +34,8 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("mfk");
+
             modelBuilder.ApplyConfiguration(new OriginConfiguration());
 
             modelBuilder.ApplyConfiguration(new ProcessConfiguration());
@@ -45,6 +48,9 @@
 
             modelBuilder.ApplyConfiguration(new ControlMechanismRelationsConfiguration());
 
+            modelBuilder.HasDbFunction(typeof(Extensions).GetMethod(nameof(Extensions.ScalarFunction)))
+    .HasName("scalarFunction") // function name in server
+    .HasSchema("mfk"); // empty string since in built functions has no schema
             //OnModelCreatingPartial(modelBuilder)
         }
 

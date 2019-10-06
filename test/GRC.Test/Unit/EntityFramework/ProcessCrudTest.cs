@@ -3,6 +3,7 @@ using GRC.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xunit;
 using static GRC.Test.Utils.DatabaseManager;
@@ -25,10 +26,10 @@ namespace GRC.Test.Unit.EntityFramework
             var cmrst = new Domain.Models.ControlMechanismRelations() { Version = 1, Origin = po, ControlMechanizm = cm1, Stage = st };
             var cmrpr = new Domain.Models.ControlMechanismRelations() { Version = 1, Origin = po, ControlMechanizm = cm1, Process = pr };
             var cmrspr = new Domain.Models.ControlMechanismRelations() { Version = 1, Origin = po, ControlMechanizm = cm1, SubProcess = spr };
-            var invalidNoRelationToProcessTree = new Domain.Models.ControlMechanismRelations() { Version = 1, Origin = po, ControlMechanizm = cm1 };
+            //var invalidNoRelationToProcessTree = new Domain.Models.ControlMechanismRelations() { Version = 1, Origin = po, ControlMechanizm = cm1 };
 
             //Act
-            using (var ctx = GetInMemoryContext())
+            using (var ctx = GetRealDbContext())
             {
                 //clear tables!
                 ctx.Origin.RemoveRange(ctx.Origin);
@@ -44,14 +45,29 @@ namespace GRC.Test.Unit.EntityFramework
                 ctx.SubProcess.Add(spr);
                 ctx.Stage.Add(st);
                 ctx.ControlMechanism.AddRange(cm1, cm2);
-                ctx.ControlMechanismRelations.AddRange(cmrst, cmrpr, cmrspr, invalidNoRelationToProcessTree);
+                ctx.ControlMechanismRelations.AddRange(cmrst, cmrpr, cmrspr);//, invalidNoRelationToProcessTree);
                 ctx.SaveChanges();
-            }
 
-            //Assert
-            using (var ctx = GetInMemoryContext())
+
+                //Assert
+                Assert.True(ctx.ControlMechanismRelations.Any());
+            } 
+        }
+
+        [Fact]
+        public void MyTestMethod()
+        {
+            //Arrange
+            var or = new Origin();
+            //Act
+            //Assert 
+            using (var ctx = GetRealDbContext())
             {
-                Assert.True(ctx.ControlMechanismRelations.AnyAsync().Result);
+                var   query = ctx.Process
+   .Where(x => x.Id == 4)
+   .Select(d => Extensions.ScalarFunction(d.Id));
+                var result = query.FirstOrDefault();
+                Assert.True(result);
             }
         }
     }

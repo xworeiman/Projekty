@@ -12,7 +12,8 @@ namespace GRC.Test.Utils
     {
         public static IConfigurationRoot GetIConfigurationRoot(string outputPath)
         {
-            outputPath ??= Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            outputPath ??= Path.GetDirectoryName(Directory.GetCurrentDirectory());
+
             return new ConfigurationBuilder()
                 .SetBasePath(outputPath)
                 .AddJsonFile("appsettings.json", optional: true)

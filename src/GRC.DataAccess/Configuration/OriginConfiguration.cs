@@ -11,18 +11,13 @@
 
             builder.ToTable("Origin", "mfk");
 
+
             builder.Property(e => e.Id)
                 .HasColumnName("ID")
-                .ValueGeneratedOnAdd();
+                .HasDefaultValueSql("(NEXT VALUE FOR [mfk].[OriginPK])");
 
             builder.HasKey(e => e.Id)
                 .IsClustered(true);
-
-            //builder.Property(e => e.ActiveVersion)
-            //    .HasDefaultValueSql("((1))");
-
-            //builder.Property(e => e.LastVersion)
-            //    .HasDefaultValueSql("((1))");
         }
     }
 }
