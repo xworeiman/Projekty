@@ -5,6 +5,7 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
     using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+    using System;
 
     internal class ProcessConfiguration : IEntityTypeConfiguration<Process>
     {
@@ -25,7 +26,7 @@
             builder.Property(e => e.CreateDate)
                 .HasColumnType("datetime")
                 .HasDefaultValueSql("(getdate())");
-
+            
             builder.Property(e => e.EnterpriseId)
                 .HasColumnName("EnterpriseID")
                 .HasMaxLength(50);
@@ -35,10 +36,10 @@
                 .HasMaxLength(50);
 
             builder.Property(e => e.State)
-                .HasConversion(new EnumToNumberConverter<MfkStates, int>());
+                .HasConversion(new EnumToNumberConverter<MfkStates, int>())
+                .IsConcurrencyToken();
 
             builder.Property(e => e.Name).HasMaxLength(300);
-
             builder.OwnsOne(o => o.Owner, t =>
             {
                 t.Property(e => e.OwnerId).HasColumnName("OwnerID");

@@ -23,3 +23,8 @@ https://blog.ploeh.dk/2014/06/10/pure-di/
 https://blog.ploeh.dk/2012/11/06/WhentouseaDIContainer/
 
 https://kozmic.net/2012/10/23/ioc-container-solves-a-problem-you-might-not-have-but-its-a-nice-problem-to-have/
+
+
+https://dotnetcore.gaprogman.com/2017/01/26/entity-framework-core-shadow-properties/
+
+https://docs.microsoft.com/en-us/ef/core/modeling/table-splitting

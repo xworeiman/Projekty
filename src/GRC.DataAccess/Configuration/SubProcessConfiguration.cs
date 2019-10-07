@@ -57,7 +57,8 @@
                 .WithMany(p => p.Childs)
                 .HasForeignKey(d => d.ParentId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_SubProcess_Process");
+                .HasConstraintName("FK_SubProcess_Process")
+                .IsRequired();
 
             builder.HasOne(d => d.PreviusVersion)
                 .WithMany(p => p.InversePreviusVersion)
