@@ -28,3 +28,6 @@ https://kozmic.net/2012/10/23/ioc-container-solves-a-problem-you-might-not-have-
 https://dotnetcore.gaprogman.com/2017/01/26/entity-framework-core-shadow-properties/
 
 https://docs.microsoft.com/en-us/ef/core/modeling/table-splitting
+
+
+https://github.com/ardalis/CleanArchitecture/tree/ardalis/net30update/src/CleanArchitecture.Web/Api
