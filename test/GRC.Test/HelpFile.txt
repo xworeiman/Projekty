@@ -31,3 +31,14 @@ https://docs.microsoft.com/en-us/ef/core/modeling/table-splitting
 
 
 https://github.com/ardalis/CleanArchitecture/tree/ardalis/net30update/src/CleanArchitecture.Web/Api
+
+
+
+
+https://github.com/xbehave/xbehave.net/wiki/Assertions
+https://github.com/shouldly/shouldly
+http://docs.shouldly-lib.net/docs/completein
+https://fluentassertions.com/introduction
+https://tsqlt.org
+
+
